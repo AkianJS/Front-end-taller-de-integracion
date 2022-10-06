@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Contenedor con display grid para separar ambas secciones 
+  del login */
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100vh;
+}
+
+/* Clase para alinear los formularios en el centro */
+
+.formAlign {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Clase que afecta a ambos formularios para ofrecer
+  el alineamiento de los elementos */
+.forms {
+  position: relative;
+  max-width: 300px;
+  text-align: center;
+}
+
+.forms input {
+  width: 300px;
+  height: 40px;
+  padding: 0 10px 0 10px;
+  margin: 20px 0 0 0;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
+  outline: none;
+
+}
+
+.inputAnimation span {
+  position: absolute;
+  left: 0;
+  padding: 0 5px;
+  margin: 25px 0;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.inputAnimation input:valid ~ span,
+.inputAnimation input:focus ~ span {
+  background-color: #fff;
+  background-size: contain;
+  color: #26a69a;
+  transform: translate(6px, -18px);
+  scale: 0.8;
+  border-left: 1px solid #26a69a;
+  border-right: 1px solid #26a69a;
+}
+
+/* Background con un position absolute para poder ubicarlo
+  de acuerdo al formulario que se esté usando */
+
+.background {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: center url("../assets/pngwing.com.png");
+  background-size: 100%;
+  background-color: #26a69a;
+  background-blend-mode: soft-light;
+  overflow: hidden;
+  z-index: 20;
+}
+
+@keyframes bg-in {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.bgAnimation {
+  animation: bg-in 1s ease forwards;
+}
+
+@keyframes bg-out {
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.bgOut {
+  transform: translateX(100%);
+  width: 50%;
+  animation: bg-out 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+/* Seccion de login con su correspondiente animación */
+.signInForm {
+  transform: translateX(50vw);
+  opacity: 0;
+  z-index: -1;
+}
+
+/* animación para mostrar el login-in */
+@keyframes login-in {
+  25% {
+    transform: translateX(30vw);
+    opacity: 0;
+  }
+  30% {
+    opacity: 100;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 100;
+    z-index: 1;
+  }
+}
+
+.loginIn {
+  animation: login-in 1s ease forwards;
+}
+
+@keyframes login-out {
+  25% {
+    transform: translateX(20vw);
+    opacity: 100;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(50vw);
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+.loginOut {
+  transform: translateX(0);
+  opacity: 100;
+  animation: login-out 1s ease-in forwards;
+  z-index: 1;
+}
+
+/* Animacion de entrada y salida para el Sign Up */
+@keyframes sign-up-out {
+  30% {
+    transform: translateX(-20vw);
+    opacity: 100;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-20vw);
+    opacity: 0;
+  }
+}
+
+.signUpOut {
+  animation: sign-up-out 1s ease forwards;
+}
+
+@keyframes sign-up-in {
+  30% {
+    transform: translateX(-30vw);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 100;
+  }
+}
+
+.signUpIn {
+  transform: translateX(-30vw);
+  opacity: 0;
+  animation: sign-up-in 1s ease forwards;
+}
+
+/* Botón que se encarga de iniciar las transiciones entre
+  ambos formularios */
+.button25 {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translateX(-50%);
+  background-color: #36a9ae;
+  background-image: linear-gradient(#37adb2, #329ca0);
+  border: 1px solid #2a8387;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 1px;
+  color: #ffffff;
+  cursor: pointer;
+  display: block;
+  font-size: 17px;
+  line-height: 100%;
+  margin: 0;
+  outline: 0;
+  padding: 11px 15px 12px;
+  text-align: center;
+  width: 8em;
+  z-index: 21;
+  transition: all ease 1s;
+}
+
+.button25Animation {
+  left: 75%;
+}
+
+.button25:hover {
+  box-shadow: rgba(255, 255, 255, 0.3) 0 0 2px inset,
+    rgba(0, 0, 0, 0.4) 0 1px 2px;
+  text-decoration: none;
+  transition-duration: 0.15s, 0.15s;
+  transition: all ease 1s;
+}
+
+.submitButton {
+  width: 50% !important;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  background-color: #26a69a;
+  border-style: none;
+  color: #fff;
+  letter-spacing: 2px;
+  transition: all ease 0.4s;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.submitButton:hover {
+  cursor: pointer;
+  transform: translate(2px, -2px);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
