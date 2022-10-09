@@ -1,0 +1,28 @@
+.footerContainer {
+    display: grid;
+    grid-template-columns: minmax(200px, 400px) minmax(200px, 400px);
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+}
+
+.footerContainer i{
+    font-size: 3rem;
+    color: blue;
+}
+
+.podesPagar span{
+    color: blue;
+    font-weight: 600;
+}
+
+.compraSegura {
+    margin-top: 15px;
+}
+
+@media (max-width: 400px) {
+    .footerContainer {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+    }
+}

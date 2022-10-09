@@ -4,48 +4,46 @@ import styles from "./Login.module.css";
 import setUserData from "../utils/setUserData";
 
 const Login = () => {
-  
   function animaciones() {
     const button = document.getElementById("button");
     const background = document.getElementById("background");
     const login = document.getElementById("login");
     const signUp = document.getElementById("sign-up");
-  
-    if (background.classList.contains(styles.bgAnimation)) {
-         background.classList.remove(styles.bgAnimation);
-         background.classList.add(styles.bgOut);
-   
-         button.classList.remove(styles.button25Animation);
-         button.innerText = "Log in?";
-   
-         login.classList.add(styles.loginOut);
-   
-         signUp.classList.add(styles.signUpIn);
-       } else {
-         background.classList.add(styles.bgAnimation);
-         background.classList.remove(styles.bgOut);
-   
-         button.classList.add(styles.button25Animation);
-         button.innerText = "Sign up?";
-   
-         login.classList.add(styles.loginIn);
-         if (login.classList.contains(styles.loginOut))
-           login.classList.remove(styles.loginOut);
-   
-         signUp.classList.add(styles.signUpOut);
-         signUp.classList.remove(styles.signUpIn);
-       }
-     }
-  
 
-//   Manejo del registro con react hook form
+    if (background.classList.contains(styles.bgAnimation)) {
+      background.classList.remove(styles.bgAnimation);
+      background.classList.add(styles.bgOut);
+
+      button.classList.remove(styles.button25Animation);
+      button.innerText = "Log in?";
+
+      login.classList.add(styles.loginOut);
+
+      signUp.classList.add(styles.signUpIn);
+    } else {
+      background.classList.add(styles.bgAnimation);
+      background.classList.remove(styles.bgOut);
+
+      button.classList.add(styles.button25Animation);
+      button.innerText = "Sign up?";
+
+      login.classList.add(styles.loginIn);
+      if (login.classList.contains(styles.loginOut))
+        login.classList.remove(styles.loginOut);
+
+      signUp.classList.add(styles.signUpOut);
+      signUp.classList.remove(styles.signUpIn);
+    }
+  }
+
+  //   Manejo del registro con react hook form
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
     setUserData(data);
   };
 
-//   Manejo del login
+  //   Manejo del login
 
   return (
     <div>
@@ -57,13 +55,13 @@ const Login = () => {
         <section className={`${styles.loginContainer} ${styles.formAlign}`}>
           <form id="login" className={`${styles.signInForm} ${styles.forms}`}>
             <h4>Entrar</h4>
-            <div className={styles.inputAnimation}> 
-            <input required="required" type="text" name="email" />
-            <span>Email</span>
+            <div className={styles.inputAnimation}>
+              <input required="required" type="text" name="email" />
+              <span>Email</span>
             </div>
             <div className={styles.inputAnimation}>
-            <input required="required" type="text" name="pass" id="pass" />
-            <span>Contraseña</span>
+              <input required="required" type="text" name="pass" id="pass" />
+              <span>Contraseña</span>
             </div>
           </form>
         </section>
@@ -103,7 +101,7 @@ const Login = () => {
                 name="pass"
                 required="required"
                 {...register("contraseña", {
-                    required: true,
+                  required: true,
                 })}
               />
               <span>Contraseña</span>

@@ -1,6 +1,6 @@
 export default async function setUserData(data = {}) {
   try {
-    const response = await fetch("http://localhost:8081/users", {
+    const response = await fetch("http://localhost:8081/", {
       method: "POST",
       body: JSON.stringify(data),
       headers: { "Content-type": "application/json; charset=UTF-8" },
