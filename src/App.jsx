@@ -1,3 +1,4 @@
+import "./App.css"
 import Login from './pages/Login'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Header from './components/Header'
@@ -7,7 +8,7 @@ import Navbar from './components/Navbar'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter className="App">
     <Routes>
       <Route path='/' element={<HeaderCarousel/>}></Route>
       <Route path='/navbar' element={<Navbar/>}></Route>

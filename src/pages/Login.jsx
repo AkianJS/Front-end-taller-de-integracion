@@ -15,7 +15,7 @@ const Login = () => {
       background.classList.add(styles.bgOut);
 
       button.classList.remove(styles.button25Animation);
-      button.innerText = "Log in?";
+      button.innerText = "Entrar?";
 
       login.classList.add(styles.loginOut);
 
@@ -25,7 +25,7 @@ const Login = () => {
       background.classList.remove(styles.bgOut);
 
       button.classList.add(styles.button25Animation);
-      button.innerText = "Sign up?";
+      button.innerText = "Registrarse?";
 
       login.classList.add(styles.loginIn);
       if (login.classList.contains(styles.loginOut))
@@ -44,7 +44,6 @@ const Login = () => {
   };
 
   //   Manejo del login
-
   return (
     <div>
       <span className={styles.background} id="background"></span>

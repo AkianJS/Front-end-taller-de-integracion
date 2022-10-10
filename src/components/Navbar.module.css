@@ -19,8 +19,9 @@
   list-style: none;
 }
 
-.burgerBar {
+.barContainer {
   display: none;
+  height: 2rem;
 }
 
 .logo {
@@ -38,7 +39,8 @@
 }
 
 .searchBar input {
-  width: 250px;
+  width: 40vw;
+  max-width: 400px;
   height: 1.5rem;
   background-color: #9a67ea;
   outline: none;
@@ -53,6 +55,7 @@
   margin-right: 2rem;
   border-radius: 1px;
   color: #673ab7;
+  letter-spacing: 1px;
 }
 
 @media (max-width: 560px) {
@@ -71,11 +74,32 @@
   }
 
   .searchBar input {
-    width: 100%;
-    flex-grow: 1;
+    width: 50vw;
+  }
+
+  .barContainer {
+    position: relative;
+    text-align: center;
   }
 
   .burgerBar {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    cursor: pointer;
+    transition: all 0.4s;
+  }
+
+  .closeBurger {
+    font-size: 1.5rem;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    position: absolute;
+    transition: all 0.7s;
+  }
+
+  .barContainer {
+    padding-top: 3px;
     display: block;
   }
 }
