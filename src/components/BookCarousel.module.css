@@ -1,0 +1,12 @@
+.container {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+.container * {
+    overflow: hidden;
+}
+
+.CarouselItem {
+    padding: 0 25px;
+}

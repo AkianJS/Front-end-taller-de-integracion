@@ -1,27 +1,29 @@
 import React from "react";
 import styles from "./Footer.module.css";
-import { FaShieldAlt, FaRegCreditCard } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className={styles.footerContainer}>
-      <div className={styles.podesPagar}>
-        <i>
-          <FaRegCreditCard />
-        </i>
-        <h3>Pagá con MercadoPago</h3>
-        <p>
-          Podés pagar con tarjeta, débito y efectivo. <br />
-          Hasta 12 cuotas sin interes <span>MercadoPago</span>!
-        </p>
+    <footer className={`grid grid-cols-1 justify-items-start sm:grid-cols-3 gap-3 sm:justify-items-center ${styles.footerContainer}`}>
+      <div>
+        <h3>Equipo de desarrollo</h3>
+        <p>Gonzalo Errandonea</p>
+        <p>Tomas Alaluf</p>
+        <p>Gonzalo Romero</p>
+        <p>Alexis Brunetti</p>
+        <p>Gabriel Ramos</p>
       </div>
-      <div className={styles.compraSegura}>
-        <i>
-          {" "}
-          <FaShieldAlt />{" "}
-        </i>
-        <h3>Seguridad de principio a fin</h3>
-        <p>Sentite seguro de realizar tus compras</p>
+      <div>
+        <h3>Enlaces Útiles</h3>
+        <p>Sobre nosotros</p>
+        <p>Politicas de uso</p>
+        <p>Haz un reclamo</p>
+        <p>Contactate con nosotros</p>
+      </div>
+      <div>
+        <h3>Información de Contacto</h3>
+          <p><strong> Email:</strong> tucan@example.com</p>
+          <p><strong> Direccion:</strong> siempreviva 123</p>
+          <p><strong> Teléfono:</strong> 11-6666666</p>
       </div>
     </footer>
   );

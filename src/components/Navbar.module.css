@@ -28,6 +28,12 @@
   margin-left: 2rem;
 }
 
+.logo img{
+  width: 200px;
+  object-fit: contain;
+  overflow: hidden;
+}
+
 .searchBar {
   position: relative;
 }
@@ -49,13 +55,30 @@
   color: white;
 }
 
+/* Efecto ripple para el boton */
+.loginButton button:hover {
+  background: #673ab7 radial-gradient(circle, transparent 1%, #9a67ea 1%)
+    center/15000%;
+}
+.loginButton button:active {
+  background-color: #673ab7;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/* Estilo del boton */
 .loginButton button {
-  width: 5rem;
-  height: 1.5rem;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  background-position: center;
+  transition: background 0.8s;
   margin-right: 2rem;
-  border-radius: 1px;
-  color: #673ab7;
-  letter-spacing: 1px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: white;
+  background-color: #673ab7;
+  box-shadow: 0 0 4px #999;
 }
 
 @media (max-width: 560px) {
@@ -93,7 +116,7 @@
     font-size: 1.5rem;
     pointer-events: none;
     left: 0;
-    top: 0;
+    top: 4px;
     position: absolute;
     transition: all 0.7s;
   }
