@@ -36,15 +36,14 @@ const Login = () => {
     }
   }
 
-//   Manejo del registro con react hook form
+  //   Manejo del registro con react hook form
   const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
     setUserData(data);
   };
 
-//   Manejo del login
-
+  //   Manejo del login
   return (
     <div>
       <span className={styles.background} id="background"></span>
@@ -55,13 +54,13 @@ const Login = () => {
         <section className={`${styles.loginContainer} ${styles.formAlign}`}>
           <form id="login" className={`${styles.signInForm} ${styles.forms}`}>
             <h4>Entrar</h4>
-            <div className={styles.inputAnimation}> 
-            <input required="required" type="text" name="email" />
-            <span>Email</span>
+            <div className={styles.inputAnimation}>
+              <input required="required" type="text" name="email" />
+              <span>Email</span>
             </div>
             <div className={styles.inputAnimation}>
-            <input required="required" type="text" name="pass" id="pass" />
-            <span>Contraseña</span>
+              <input required="required" type="text" name="pass" id="pass" />
+              <span>Contraseña</span>
             </div>
           </form>
         </section>
@@ -101,7 +100,7 @@ const Login = () => {
                 name="pass"
                 required="required"
                 {...register("contraseña", {
-                    required: true,
+                  required: true,
                 })}
               />
               <span>Contraseña</span>

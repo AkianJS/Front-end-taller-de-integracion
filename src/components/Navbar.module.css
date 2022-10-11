@@ -1,0 +1,128 @@
+.navContainer {
+  width: 100%;
+  height: 4rem;
+  background-color: #673ab7;
+  box-shadow: 0 4px 3px rgba(0, 0, 0, 0.8);
+}
+
+.navLinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  height: 4rem;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.navLinks li {
+  list-style: none;
+}
+
+.barContainer {
+  display: none;
+  height: 2rem;
+}
+
+.logo {
+  margin-left: 2rem;
+}
+
+.logo img{
+  width: 200px;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.searchBar {
+  position: relative;
+}
+
+.searchBarIcon {
+  position: absolute;
+  left: 5px;
+  top: 4px;
+}
+
+.searchBar input {
+  width: 40vw;
+  max-width: 400px;
+  height: 1.5rem;
+  background-color: #9a67ea;
+  outline: none;
+  border: none;
+  padding: 0 5px 0 30px;
+  color: white;
+}
+
+/* Efecto ripple para el boton */
+.loginButton button:hover {
+  background: #673ab7 radial-gradient(circle, transparent 1%, #9a67ea 1%)
+    center/15000%;
+}
+.loginButton button:active {
+  background-color: #673ab7;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/* Estilo del boton */
+.loginButton button {
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  background-position: center;
+  transition: background 0.8s;
+  margin-right: 2rem;
+  border-radius: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: white;
+  background-color: #673ab7;
+  box-shadow: 0 0 4px #999;
+}
+
+@media (max-width: 560px) {
+  .navLinks {
+    justify-content: space-around;
+    font-size: 16px;
+  }
+
+  .logo {
+    order: 2;
+    margin: 0;
+  }
+
+  .loginButton {
+    display: none;
+  }
+
+  .searchBar input {
+    width: 50vw;
+  }
+
+  .barContainer {
+    position: relative;
+    text-align: center;
+  }
+
+  .burgerBar {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    cursor: pointer;
+    transition: all 0.4s;
+  }
+
+  .closeBurger {
+    font-size: 1.5rem;
+    pointer-events: none;
+    left: 0;
+    top: 4px;
+    position: absolute;
+    transition: all 0.7s;
+  }
+
+  .barContainer {
+    padding-top: 3px;
+    display: block;
+  }
+}

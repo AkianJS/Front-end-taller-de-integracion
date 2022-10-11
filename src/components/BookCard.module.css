@@ -1,0 +1,42 @@
+.bookCardContainer {
+    width: 250px;
+    height: 350px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.6);
+    margin: 20px 10px;
+}
+
+.bookCardContainer img {
+    width: 80%;
+    height: 250px;
+}
+
+
+.infoContainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: 
+    "titulo dots"
+    "titulo precio";
+    width: 100%;
+    background-color: #fff;
+}
+
+.infoContainer h3{
+    margin: 5px 10px;
+    grid-area: titulo;
+}
+
+.infoContainer p{
+    justify-self: end;
+    padding-right: 5px;
+    grid-area: precio;
+}
+
+.cardMenuDots {
+    justify-self: end;
+    font-size: 1.5rem;
+    grid-area: dots;
+}

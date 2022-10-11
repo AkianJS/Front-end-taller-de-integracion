@@ -1,9 +1,15 @@
-export default async function setUserData(data = {}) {
+export default async function setUserData({cuil, nombre, contraseña, correo}) {
   try {
-    const response = await fetch("http://localhost:8081/users", {
+    const response = await fetch("http://localhost:3000/graphql", {
       method: "POST",
-      body: JSON.stringify(data),
-      headers: { "Content-type": "application/json; charset=UTF-8" },
+      body: JSON.stringify({ query: `
+      mutation {
+        insertUsuario(cuil: ${cuil}, nombre: "${nombre}", contrasenia: "${contraseña}", correo: "${correo}") {
+          nombre
+        }
+      }
+      `  }),
+      headers: { "Content-type": "application/json" },
     });
     const content = await response.json();
     console.log(content);

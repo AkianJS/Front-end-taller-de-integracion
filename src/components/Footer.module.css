@@ -1,0 +1,14 @@
+.footerContainer {
+    background-color: #1F1F1F;
+    color: #fff;
+    width: 100%;
+    height: auto;
+}
+
+.footerContainer h3 {
+    margin: 20px 0;
+}
+
+.footerContainer p {
+    font-size: 0.8rem;
+}
