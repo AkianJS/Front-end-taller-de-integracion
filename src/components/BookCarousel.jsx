@@ -31,7 +31,6 @@ const BookCarousel = () => {
           infinite={true}
           containerClass={styles.container}
           itemClass={styles.CarouselItem}
-        //   itemClass={styles.imageStyle}
         >
             <BookCard/>
             <BookCard/>

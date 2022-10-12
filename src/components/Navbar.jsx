@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import styles from "./Navbar.module.css";
+import UserMenu from '../menuComponents/UserMenu';
+
 import { FaSearch } from "react-icons/fa";
 import { VscThreeBars, VscClose } from "react-icons/vsc";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const [isMobileOption, setIsMobileOption] = useState(false);
+  const [isMobileOption, setIsMobileOption] = useState(true);
   const [isLogged, setisLogged] = useState(false)
 
 
@@ -33,7 +35,7 @@ const Navbar = () => {
           <FaSearch className={styles.searchBarIcon} />
         </li>
         { isLogged ? ( 
-          <p>No está logueado</p>
+            <UserMenu/>
           ) : (
             <li className={styles.loginButton}>
           <Link to="/login">

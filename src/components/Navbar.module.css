@@ -25,13 +25,16 @@
 }
 
 .logo {
-  margin-left: 2rem;
+  width: 200px;
+  margin-left: 1rem;
+  overflow: hidden;
 }
 
 .logo img{
-  width: 200px;
-  object-fit: contain;
-  overflow: hidden;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  object-fit: fill;
 }
 
 .searchBar {
@@ -40,7 +43,7 @@
 
 .searchBarIcon {
   position: absolute;
-  left: 5px;
+  left: 0px;
   top: 4px;
 }
 
@@ -48,11 +51,22 @@
   width: 40vw;
   max-width: 400px;
   height: 1.5rem;
-  background-color: #9a67ea;
+  background: transparent;
   outline: none;
   border: none;
-  padding: 0 5px 0 30px;
+  border-bottom: 2px solid;
+  padding: 0 5px 0 25px;
   color: white;
+  transition: border-color 0.2s;
+}
+
+.searchBar input:focus {
+  border-color: #21DBC8;
+}
+
+.searchBar input::placeholder {
+  font-size: 0.9rem;
+  color: #eee;
 }
 
 /* Efecto ripple para el boton */
@@ -72,7 +86,7 @@
   font-size: 0.8rem;
   background-position: center;
   transition: background 0.8s;
-  margin-right: 2rem;
+  margin-right: 1rem;
   border-radius: 10px;
   text-transform: uppercase;
   cursor: pointer;
@@ -83,13 +97,20 @@
 
 @media (max-width: 560px) {
   .navLinks {
-    justify-content: space-around;
+    justify-content: space-between;
     font-size: 16px;
   }
 
   .logo {
     order: 2;
     margin: 0;
+    width: 100px;
+  }
+
+  .logo img{
+    margin: 0;
+    width: 120%;
+    object-fit: cover;
   }
 
   .loginButton {

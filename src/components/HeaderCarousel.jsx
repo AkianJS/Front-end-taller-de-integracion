@@ -29,9 +29,10 @@ const HeaderCarousel = () => {
       infinite={true}
       showDots={true}
       itemClass={styles.imageStyle}
+      containerClass={`${styles.headerCarouselContainer} bg-gray-500`}
     >
         <img 
-          src="https://cdn.pixabay.com/photo/2022/09/21/02/35/white-faced-heron-7469269_960_720.jpg"
+          src="./src/assets/libro1.png"
           alt=""
         />
 

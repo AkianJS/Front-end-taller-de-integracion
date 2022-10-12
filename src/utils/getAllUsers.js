@@ -14,7 +14,7 @@ export default async function getAllUsers() {
     `  }),
       });
       const content = await response.json();
-      console.log(content.data.getAllUsuarios);
+      return content
     } catch (error) {
       console.log("Error al transmitir los datos ", error);
     }
