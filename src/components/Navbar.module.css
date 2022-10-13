@@ -25,13 +25,12 @@
 }
 
 .logo {
-  width: 200px;
-  margin-left: 1rem;
+  width: 150px;
   overflow: hidden;
 }
 
 .logo img{
-  width: 100%;
+  width: 120%;
   height: auto;
   max-width: none;
   object-fit: fill;
@@ -131,15 +130,6 @@
     margin-bottom: 25px;
     cursor: pointer;
     transition: all 0.4s;
-  }
-
-  .closeBurger {
-    font-size: 1.5rem;
-    pointer-events: none;
-    left: 0;
-    top: 4px;
-    position: absolute;
-    transition: all 0.7s;
   }
 
   .barContainer {

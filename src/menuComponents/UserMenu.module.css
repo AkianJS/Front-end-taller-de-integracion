@@ -1,0 +1,65 @@
+.container li {
+    transition: 0.6s;
+}
+
+.iconAnimation:hover {
+    color: #21DBC8;
+    cursor: pointer;
+    animation: rotate-icons 1s;
+}
+
+
+body {
+    opacity: 50;
+}
+
+@keyframes rotate-icons {
+    0% { 
+        transform: rotate(0deg);
+    }
+
+    40% {
+        transform: rotate(50deg);
+    }
+
+    80% {
+        transform: rotate(-50deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+/* Animacion para que al hacer hover en el usuario aparezcan sus opciones */
+.userOptionsContainer {
+    padding: 1rem ;
+    height: 11rem;
+    width: 12rem;
+    overflow: hidden;
+    border-radius: 2px;
+    right: 1rem;
+    position: absolute;
+    opacity: 50;
+    pointer-events: none;
+    color: black;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: 0.5s;
+    transition-property: opacity;
+}
+
+
+.userMenuIn:hover ~ div, .userOptionsContainer:hover {
+    opacity: 1;
+    z-index: 10000;
+    pointer-events: all;
+    box-shadow: 0px 0px 0 calc(100vh + 100vw) rgba(0, 0, 0, 0.7);
+}
+
+
+@media (max-width: 560px) {
+    .container {
+        display: none;
+    }
+}
