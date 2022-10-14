@@ -12,7 +12,7 @@ export default async function setUserData({cuil, nombre, contraseña, correo}) {
       headers: { "Content-type": "application/json" },
     });
     const content = await response.json();
-    console.log(content);
+    return content
   } catch (error) {
     console.log("Error al transmitir los datos ", error);
   }

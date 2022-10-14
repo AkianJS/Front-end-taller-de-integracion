@@ -1,0 +1,90 @@
+.container {
+    width: 15em;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1010;
+    overflow: hidden;
+}
+
+
+.container::after {
+    content: "";
+    animation: menu-in 0.4s ease-in forwards;
+}
+
+.closeIcon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.menuItems {
+    width: 100%;
+    height: 10px;
+    background-color: rgba(255, 255, 255, .8);
+    color: black;
+    border-radius: 2px;
+}
+
+.menuItems li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 10px;
+}
+
+/* Animación del menú cuando aparece y desaparece */
+.menuAnimationIn {
+    animation: menu-in 0.4s ease-in forwards;
+}
+
+@keyframes menu-in {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+
+    }
+}
+
+.menuAnimationOut {
+    animation: menu-out 0.4s ease-out forwards;
+}
+
+@keyframes menu-out {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Animación de los elementos del menú */
+
+.menuItems li {
+    width: 100%;
+    background-color: rgba(255, 255, 255, .8);
+    background-size: cover;
+}
+
+.menuItems span {
+    width: 100%;
+    height: 100vh;
+    padding: 100vh 0;
+    background-color: rgba(255, 255, 255, .8);
+}
+
+@keyframes itemAnimation {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
